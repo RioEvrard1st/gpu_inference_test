@@ -21,9 +21,10 @@ find_package(OpenCV REQUIRED COMPONENTS
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-#include_directories(
-   #${OpenCV_INCLUDE_DIRS}
-#)
+include_directories(
+   ${OpenCV_INCLUDE_DIRS}
+   ${TORCH_INCLUDE_DIRS}
+)
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "*.cpp")
 file(GLOB_RECURSE HEADERS CONFIGURE_DEPENDS "*.hxx")
