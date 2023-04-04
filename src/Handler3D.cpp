@@ -1,6 +1,6 @@
 #include "Handler3D.hpp"
 #include <fstream>
-#include <ros/ros.h>
+//#include <ros/ros.h>
 
 cv::Mat parse_line(std::string line ){
     std::string temp = line.substr(line.find("[") + 1, line.find("]") - line.find("[") - 1);
@@ -56,7 +56,7 @@ void Handler3D::readParamsText(std::string calibrationdata){
             data.close();
         }
     }catch (cv::Exception &e){
-		ROS_INFO_STREAM("No camera paramters found" << e.what());
+		//ROS_INFO_STREAM("No camera paramters found" << e.what());
 	}
     //printParams();
 }
@@ -75,7 +75,7 @@ void Handler3D::printParams(){
 }
 
 Handler3D::Handler3D(std::string filename){
-    ROS_INFO_STREAM("Reading camera parameters from: " << filename << "\n");
+    //ROS_INFO_STREAM("Reading camera parameters from: " << filename << "\n");
     readParamsText(filename);
     
     //define 3d points wrt to the base of the cone which is taken as the world frame
