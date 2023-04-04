@@ -11,9 +11,9 @@ find_package(OpenCV REQUIRED COMPONENTS
     features2d
     PATHS "."
 )
-#find_package(Torch REQUIRED 
-#    PATHS "." 
-#)
+find_package(Torch REQUIRED 
+    PATHS "." 
+)
 
 ###########
 ## Build ##
